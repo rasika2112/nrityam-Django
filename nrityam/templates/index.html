@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400|Ubuntu&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/aeaca870f5.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {box-sizing: border-box}
+body {
+font-family: Verdana, sans-serif;
+    margin:0}
+
+.mySlides {
+display: none}
+
+img {
+vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.mySlides-fade2{
+  position: relative;
+}
+
+/* Caption text */
+.text1 {
+  color: #f2f2f2;
+  font-size: 45px;
+  padding-left: 50px;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  padding-right:1000px;
+  text-shadow: 2px 2px 4px #000000;
+  }
+
+#mynav {
+  position: fixed;
+  margin: 0px;
+  width: 100%;
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+}
+
+/* Navbar links */
+.topnav a {
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Arial;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.nav-colored {
+  overflow: hidden;
+  background-color: brown;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-colored a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: brown;
+
+}
+
+.nav-colored a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+ .icon {
+  position:absolute;
+  float: left;
+  }
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  border-radius: 25px;
+  color: black;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 2px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  background-color:#f1f1f1;
+  padding-bottom: 2%;
+}
+
+.flex-container > div {
+  background-color:white;
+  width: 270px;
+  margin: 14px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+}
+
+.field{
+  height:270px;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
+.field-text{
+width: 100%;
+margin-top:2%;
+text-align: center;
+font-size: 40px;
+font-family: Helvetica;
+}
+.field-text > span{
+font-size: 20px;
+font-family: Helvetica;
+padding: 0.5%;
+}
+
+.imgsvg{
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.star{
+   font-size:650%;
+   color:#7fd4ce;
+}
+
+.text4-main{
+margin:2%;
+color: #788188;
+font-family: "Roboto";
+line-height: 1.5;
+font-size: 25px;
+padding-bottom: 10px;
+width:45%;
+  float: left;
+
+
+}
+
+.text4{
+  color: black;
+  text-indent:20px;
+  font-size: 35px;
+  font-family: "Amaranth";
+
+}
+
+.text4-img{
+  float:right;
+  width:45%;
+  margin:2%;
+ 
+  height: 400px;
+  display:flex;
+ 
+}
+.text4-imgcol{
+  width:50%;
+ margin-right:10px;
+  border-radius: 4px;
+}
+
+.text4-imgcol:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+   position:relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #232020;
+   color: white;
+   text-align: center;
+    padding: 0.5% 0.5%;
+}
+
+.end {
+    color:white;
+    letter-spacing: 2px;
+    font-size: 1.2rem;}
+
+
+ .esha{
+  font-size: 4rem;
+  padding: 1%;
+  margin: 1%;
+  color: black;
+  text-align: left;
+  padding: 1% 1% 0;
+}
+.container {
+  display: flex;
+  padding: 2%;
+  margin: 0;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+
+.card {
+  display: flex;
+  width: 25%;
+  padding: 1%;
+  border: 2px solid grey;
+  margin: 0.5%;
+  display: inline-block;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.card-title {
+  font-size: 2.5rem;
+}
+
+.card-text {
+  font-size: 2rem;
+  padding: 2%;
+}
+
+.cost {
+  font-size: 3rem;
+  color: black;
+}
+
+.card-btn {
+  padding: 2%;
+  font-size: 1.5rem;
+  margin-top: 2%;
+}
+
+
+/* On smaller screens, decrease text size */
+@media screen and (max-width: 600px) {
+  .prev,.slides, .next,.text1, .topnav a {font-size: 10px}
+  .text1 {padding-right: 300px}
+  .slides {height:500px;}
+  .card-title, .card-text, .cost{font-size:0.5em;}
+}
+
+@media only screen and (max-width: 749px){
+  .text4-main{font-size: 15px;}
+
+}
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .prev, .next,.text1,.text2, .topnav a {font-size: 20px}
+  .text1{padding-right: 300px}
+  .card-title, .card-text, .cost{font-size:1em;}
+ 
+}
+
+
+@media screen and (max-width: 1200px) {
+  .esha {font-size: 2em;}
+.flex-container > div{width: 100%;margin-right: 34px;margin-left:34px;border-radius:30px;}
+  .imgsvg{padding-top:30px;}
+.field{height:200px;}
+.card-img-top{height: 150px;}
+  .star{font-size:500%;}
+}  
+
+
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div id="mynav">
+     <div class="topnav" >
+     
+      <a href="{% url 'signup' %}">Login/Signup</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#home" class="icon"><i>home</i><span style="color:red;">COOKING</span></a>
+
+     </div>
+    </div>
+    <div class="mySlides fade1">
+ 
+       <img class="slides" src="https://blog.tefal.co.uk/wp-content/uploads/2017/08/25-reasons-home-cooked-is-always-best.jpg" style="width:100%; height:700px">
+    <div class="text1">Enjoy healthy & best quality home made food delivered at your door step.</div>
+    </div>
+
+    <div class="mySlides fade3">
+ 
+       <img class="slides" src="https://media.gettyimages.com/photos/authentic-indian-food-picture-id639389404?s=2048x2048" style="width:100%;height:700px">
+    <div class="text1">You can be our vendor and earn money by cooking food in home</div>
+    </div>
+
+     <div class="mySlides fade2">
+ 
+       <img class="slides" src="https://www.outlookindia.com/outlooktraveller//public/uploads/filemanager/images/Chole-Bhature_5c29cc4aaaaba.jpg" style="width:100%;height:700px">
+    <div class="text1">Enjoy good food and have first delivery free.</div>
+    </div>
+
+
+    <a class="prev" onmouseover="plusSlides(-1)">&#10094;</a>
+    <a class="next" onmouseover="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onmouseover="currentSlide(1)"></span>
+  <span class="dot" onmouseover="currentSlide(2)"></span>
+
+
+
+ 
+  <span class="dot" onmouseover="currentSlide(3)"></span>
+</div>
+
+<div class="flex-container">
+  <h2 class="field-text">How it works.<br><span>Simple easy steps.</span></h2>
+  <div><fieldset class="field"><img class="imgsvg" src="https://foodtravelstay.com/frontend-assests/img/icon_home_1.svg"><br>Login/Register<br>Tell us about yourself</fieldset></div>
+  <div><fieldset class="field"><img class="imgsvg" src="https://foodtravelstay.com/frontend-assests/img/icon_home_2.svg"><br>Pick a menu<br>North,South,Chinese</fieldset></div>
+  <div><fieldset class="field"><img class="imgsvg" src="https://foodtravelstay.com/frontend-assests/img/icon_home_3.svg"><br>Pay<br>Cash on delivery</fieldset></div>
+  <div><fieldset class="field"><img class="imgsvg" src="https://foodtravelstay.com/frontend-assests/img/icon_home_4.svg"><br>Delivered<br>At door step/When you order</fieldset></div>
+  <div><fieldset class="field"><span class="star">&star;</span><br>Rating<br>You can rate our cooks</fieldset></div>
+ </div>
+
+<div width="100%"><p class="text4-main"><span class="text4">HomeCook !!! Where Happiness is truly Homemade.</span><br>
+All our meals are freshly prepared for you with the ingredients available with our Yummakers.<br> Every Yummaker who looks to join us, goes through a detailed and impartial checks to ensure that you get true home cooked meal.<br>
+We check their kitchens, audit them and even go through their grocery bills to ensure they are buying the raw materials from clean sources.</p>
+
+<!-- <img class="text4-img" src="https://previews.123rf.com/images/kazakphoto/kazakphoto1410/kazakphoto141000092/32271969-young-woman-cooking-in-the-kitchen-healthy-food-dieting-concept-healthy-lifestyle-cooking-at-home-pr.jpg" height="400px"> -->
+<div class="text4-img">
+ <img class="text4-imgcol" src="https://www.motherbabychild.com/wp-content/uploads/2016/04/Home-cooking.png">
+  <img class="text4-imgcol" src="https://civileats.com/wp-content/uploads/2019/02/190301-pressure-cooker-mothers-inequality-cooking-nutrition-front.jpg">
+</div>
+
+</div>
+
+<h1 class="esha">Recommended - Indian Cuisine</h1>
+<div class="container">
+  <div class="main-heading">
+  </div>
+    <div class="card">
+        <img class="card-img-top" src="https://thumbs.dreamstime.com/b/rajma-chawal-indian-dish-served-rice-33228329.jpg" alt="image-card-1" width="100%" height="270">
+        <div class="card-body">
+            <h5 class="card-title">Rajma Chaval + Raita</h5>
+            <p class="card-text">Hunger Ground - 4⭐</p>
+            <a class="cost">Rs. 200</a> <br>
+            <a href="#" class="btn btn-danger card-btn">Add to cart</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://www.outlookindia.com/outlooktraveller//public/uploads/filemanager/images/Chole-Bhature_5c29cc4aaaaba.jpg" alt="image-card-1" width="100%" height="270">
+        <div class="card-body">
+            <h5 class="card-title">Chole Bhature + Salad</h5>
+            <p class="card-text">Kitchen Kraft - 4.5⭐</p>
+            <a class="cost">Rs. 240</a> <br>
+            <a href="#" class="btn btn-danger card-btn">Add to cart</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://i0.wp.com/www.cookingfromheart.com/wp-content/uploads/2017/09/Veg-Biryani-in-Pressure-Cooker-6.jpg?resize=1024%2C680" alt="image-card-1" width="100%" height="270">
+        <div class="card-body">
+            <h5 class="card-title">Veg Biryani + Raita</h5>
+            <p class="card-text">Kailash - 4⭐</p>
+            <a class="cost">Rs. 150</a> <br>
+            <a href="#" class="btn btn-danger card-btn">Add to cart</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2.jpg" alt="image-card-1" width="100%" height="270">
+        <div class="card-body">
+            <h5 class="card-title">Paneer Tikka</h5>
+            <p class="card-text">Eat Fresh - 5⭐</p>
+            <a class="cost">Rs. 180</a> <br>
+            <a href="#" class="btn btn-danger card-btn">Add to cart</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://thumbs.dreamstime.com/b/pav-bhaji-23718431.jpg" alt="image-card-1" width="100%" height="270">
+        <div class="card-body">
+            <h5 class="card-title">Pav Bhaji</h5>
+            <p class="card-text">Then & Now - 4⭐</p>
+            <a class="cost">Rs. 100</a> <br>
+            <a href="#" class="btn btn-danger card-btn">Add to cart</a>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+   
+        <p class="end">© Copyright 2020 HomeCooking</p>
+   
+</footer>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+var myNav = document.getElementById('mynav');
+window.onscroll = function () {
+    "use strict";
+    if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200 ){
+        myNav.classList.add("nav-colored");
+        myNav.classList.remove("topnav");
+    }
+    else {
+        myNav.classList.add("topnav");
+        myNav.classList.remove("nav-colored");
+    }
+};
+</script>
+
+</body>
+</html> 

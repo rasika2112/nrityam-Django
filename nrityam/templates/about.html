@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+      <div class="mx-auto my-5" style="width: 200px; font-weight: bold;">
+        <h1>ABOUT US</h1>
+      </div>
+      <div
+        class="row featurette my-5 d-flex justify-content-center align-items-center"
+      >
+        <div class="col-md-7">
+          <h2 class="featurette-heading my-auto">
+            Want to learn <span class="text-muted">BHARATNATYAM.</span>
+          </h2>
+          <p class="lead">
+            Want to learn claasical dance but dont know where to start? Here's a
+            best place to start your hobby, passion or carreir in classical.
+            Just a click and you will get all resources free!
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img
+            class="featurette-image img-fluid mx-auto img-fluid"
+            src="{% static 'media/natraj.jfif' %}"
+          />
+        </div>
+      </div>
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2 my-auto">
+          <h2 class="featurette-heading">
+            Yes we teach from basic to professional.
+            <span class="text-muted">See for yourself.</span>
+          </h2>
+          <p class="lead">
+            We aim at teaching people from basic to professional.Right from your
+            Mudras(hand gestures) to specific expressions at specific time.
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1 pl-5">
+          <img
+            class="featurette-image img-fluid mx-auto img-fluid"
+            src="{% static 'media/semi-min.jpg' %}"
+          />
+        </div>
+      </div>
+
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7 my-auto">
+          <h2 class="featurette-heading">
+            Want to learn the rich Indian cultures and showcase your talent to
+            others
+            <span class="text-muted">Everything is possible here!</span>
+          </h2>
+          <p class="lead">
+            Yes, we aim at spreading the our culture all around the world. Yup!
+            want to learn important part of Indian culture and impress others.
+            THEN THIS IS THE RIGHT PLACE.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img
+            class="featurette-image img-fluid mx-auto img-fluid"
+            src="{% static 'media/semi-min.jpg' %}"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <footer
+      class="container peach-gradient p-3 ml-1 mr-1"
+      style="max-width: 100%;"
+    >
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<p align="center"> Contact Us:-<br>Phone No.:- 9920354126<br>Instagram: - rasikaj21<br>Facebook: - Rasika Joshi</div></p>
+
+      </p>
+    </footer>
+
+{% endblock content %}
