@@ -25,7 +25,7 @@ SECRET_KEY = '+3^yt66hlmocd+2&6wyvv5j!_o(vqlv(57hm!8rh7!qupgw-a!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['homecookingapp.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['nrityam.herokuapp.com','127.0.0.1']
 
 
 # Application definition
