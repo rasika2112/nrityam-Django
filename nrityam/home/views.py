@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template.context_processors import request
 from django.views.generic import ListView, DetailView
-from .models import Feedbacks
+from .models import *
 from django.urls import reverse_lazy
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -35,10 +36,11 @@ def about(request):
     context['user'] = request.user
     return render(request, 'about.html',context)
 
-
+@login_required(login_url="home")
 def pure(request):
     context = {}
     context['user'] = request.user
+    context['upcoming_classes'] = Upcoming_Classes.objects.filter()
     return render(request, 'pure.html',context)
 
 
@@ -127,3 +129,17 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def classes(request):
+    if request.method=="POST":
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        phoneNo=request.POST.get("num")
+        experience=request.POST.get("experience")
+        info_var=Classes(name=name,email=email,phoneNo=phoneNo,experience=experience)
+        info_var.save()
+        return render(request, 'classes.html')
+
+    else:
+        return render(request, 'classes.html')
