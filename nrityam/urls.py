@@ -22,7 +22,7 @@ from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls import include, url
 
-from sitemaps import Static_Sitemap
+from .sitemaps import Static_Sitemap
 
 sitemaps = {
     'static': Static_Sitemap(),
