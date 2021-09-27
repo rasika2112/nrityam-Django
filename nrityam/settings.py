@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'django.contrib.postgres',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
