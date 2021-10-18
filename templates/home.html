@@ -2,15 +2,26 @@
 {% load static %}
 {% block content %}
 <style>
-  *{
+  /* *{
         overflow-y: hidden;
-      }
+      } */
+
+      @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
 </style>
 
 <section id="intro" class="clearfix">  
   <div class="container d-flex h-100">
-    <div class="row justify-content-center align-self-center">
-      <div class="col-md-6 intro-info order-md-first order-last my-auto" id="head">
+    <div class="row justify-content-center align-self-center d-flex">
+      <!-- <center style="padding-top: 5%; padding-bottom: 5%;">
+      <iframe  width="800" height="500" src="https://www.youtube.com/embed/KyqABosXkTE" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </center> -->
+      <div class="col-md-6 intro-info order-md-first order-last my-auto d-flex flex-wrap" id="head">
         <h2 id="heading">Learn<br>Bharatanatyam<span>&nbsp; Online!</span></h2>
         <div style="text-align: center; font-size: 40px;">
         <i class="fa fa-linkedin" aria-hidden="true"></i>
@@ -34,13 +45,14 @@
       </div>
       
 
-      <div class="col-md-6 intro-img order-md-last order-first">
+      <div class="col-md-6 intro-img order-md-last order-first d-flex flex-wrap">
         <img id="img" src="https://static6.depositphotos.com/1007954/643/v/450/depositphotos_6430965-stock-illustration-indian-dancers.jpg" alt="Dancers" class="img-fluid ">
       </div>
       
     </div>
   </div>
-</section><!-- #intro -->
+</section>
+<!-- #intro -->
 
 </body>
 </html>

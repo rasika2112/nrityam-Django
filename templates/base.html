@@ -143,21 +143,24 @@
   
     <nav class="navbar peach-gradient sticky-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'home' %}">NRITYAM</a>
-                <a href="{% url 'about' %}" class="nav-link">ABOUT</a>
-                <a href="{% url 'gallery' %}" class="nav-link">GALLERY</a>
+        <button class ="navbar-toggler" type ="button" data-toggle ="collapse" data-target ="#colNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="colNav">
+          <ul class="navbar-nav ml-auto">
+                <li><a href="{% url 'about' %}" class="nav-link">ABOUT</a></li>
+                <li><a href="{% url 'gallery' %}" class="nav-link">GALLERY</a></li>
+                <li><a href="{% url 'upcoming_classes' %}" class="nav-link">WORKSHOPS</a></li>
                 {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}" class="nav-link">LOG OUT</a>
-                <a href="{% url 'pure' %}" class="nav-link">BHARATANATYAM</a>
-                <a href="{% url 'feedback' %}" class="nav-link">FEEDBACK</a>
+                <li><a href="{% url 'logout' %}" class="nav-link">LOG OUT</a></li>
+                <li><a href="{% url 'feedback' %}" class="nav-link">FEEDBACK</a></li>
                 <div style="float: right;">
-                <a class="nav-link" >Hello, {{user.username}}</a>
+                <li><a class="nav-link" >Hello, {{user.username}}</a></li>
                 </div>
                 {% else %}
-                <a data-toggle="modal" data-target="#loginmodal" class="nav-link">LOG IN</a>
-                <a data-toggle="modal" data-target="#elegantRegisterForm" class="nav-link">SIGN UP</a>
+                <li><a data-toggle="modal" data-target="#loginmodal" class="nav-link">LOG IN</a></li>
+                <li><a data-toggle="modal" data-target="#elegantRegisterForm" class="nav-link">SIGN UP</a></li>
                 {% endif %}
-                
-                
+              </ul>
+              </div>
     </nav>
 
     <!-- LOGIN FORM -->
@@ -254,5 +257,18 @@ aria-hidden="true">
   
 {% block content %}
 {% endblock content %}
+
+
+<footer
+class="container peach-gradient p-3 ml-1 mr-1"
+style="max-width: 100%; position: relative;"
+>
+    <div style="font-size: 50px; text-align: center;">
+    <a style="padding: 2%;" class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/nrityam21/"></a>
+    <a style="padding: 2%;" class="fa fa-instagram" aria-hidden="true" href="https://www.instagram.com/nrityam21/"></a>
+    <a style="padding: 2%;" href="https://www.youtube.com/channel/UCKl3Re-xscVj7o710pB-z4g" class="fa fa-youtube" aria-hidden="true"></a>
+  </div>
+
+</footer>
 </body>
 </html>

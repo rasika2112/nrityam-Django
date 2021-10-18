@@ -44,6 +44,12 @@ def pure(request):
     return render(request, 'pure.html',context)
 
 
+def upcoming_class(request):
+    context = {}
+    context['upcoming_classes'] = Upcoming_Classes.objects.filter()
+    return render(request, 'upcoming_classes.html',context)
+
+
 def semi(request):
     context = {}
     context['user'] = request.user

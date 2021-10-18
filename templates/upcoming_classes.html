@@ -5,61 +5,29 @@
     <section class="gallery-block cards-gallery">
       <div class="container">
         <div class="heading">
-          <h2>GALLERY</h2>
+          <h1>Upcoming Workshops and Classes!!</h1>
         </div>
         <div class="row">
+          {% for class in upcoming_classes %}
           <div class="col-md-6 col-lg-4">
             <div class="card border-0 transform-on-hover">
-              <a
+              <!-- <a
                 href="{% static 'media/kuchi-min.jpg' %}"
                 class="lightbox"
                 ><img
                   class="card-img-top"
                   src="{% static 'media/kuchi-min.jpg' %}"
                   alt=""
-              /></a>
+              /></a> -->
               <div class="card-body">
-                <h5>helllo dear</h5>
-                <p class="text-muted card-text">bvIgyqfbyi</p>
+                <h5><a href="{{ class.link }}">{{ class.title }}</a></h5>
+                <p class="text-muted card-text">{{ class.description }}</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover">
-              <a
-                href="{% static 'media/kathak-min.jpeg' %}"
-                class="lightbox"
-                ><img
-                  class="card-img-top"
-                  src="{% static 'media/kathak-min.jpeg' %}"
-                  alt=""
-              /></a>
-              <div class="card-body">
-                <h5>helllo dear</h5>
-                <p class="text-muted card-text">bvIgyqfbyi</p>
-              </div>
-            </div>
+          {% endfor %}
           </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover">
-              <a
-                href="{% static 'media/shukatunda.jfif' %}"
-                class="lightbox"
-                ><img
-                  class="card-img-top"
-                  src="{% static 'media/shukatunda.jfif' %}"
-                  alt=""
-              /></a>
-              <div class="card-body">
-                <h5>helllo dear</h5>
-                <p class="text-muted card-text">bvIgyqfbyi</p>
-              </div>
-            </div>
           </div>
-        </div>
-        <br />
 
         <!-- <div class="row">
           <div class="col-md-6 col-lg-4">

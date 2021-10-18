@@ -1,25 +1,67 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
+      <div class="container">
+      <div
+        class="row featurette my-5 d-flex justify-content-center align-items-center"
+      >
+        <div class="col-md-7">
+          <h2 id="heading">Learn<br>Bharatanatyam<span>&nbsp; Online!</span></h2>
+        <div style="text-align: center; font-size: 40px;">
+        <!-- <i class="fa fa-linkedin" aria-hidden="true"></i> -->
+        <a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/nrityam21/"></a>
+        <a class="fa fa-instagram" aria-hidden="true" href="https://www.instagram.com/nrityam21/"></a>
+        <a href="https://www.youtube.com/channel/UCKl3Re-xscVj7o710pB-z4g" class="fa fa-youtube" aria-hidden="true"></a>
+        
+        {% if messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <div style="color: black; font-size: 12px;">
+                  {% for message in messages %}
+              {{ message }}
+                  {% endfor %}
+              </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif %}
+        </div>
+        </div>
+        <div class="col-md-5">
+          <img id="img" src="https://static6.depositphotos.com/1007954/643/v/450/depositphotos_6430965-stock-illustration-indian-dancers.jpg" alt="Dancers" class="img-fluid ">
+      
+        </div>
+      </div>
+    </div>
+      <hr class="featurette-divider" />
+<div style=" background-color: #ff7057; padding: 0.2%;">
       <div class="mx-auto my-5" style="width: 200px; font-weight: bold;">
         <h1>ABOUT US</h1>
       </div>
+    </div>
       <div
         class="row featurette my-5 d-flex justify-content-center align-items-center"
       >
         <div class="col-md-7">
           <h2 class="featurette-heading my-auto">
-            Want to learn <span class="text-muted">BHARATNATYAM.</span>
+            Want to learn <span class="text-muted">DANCE.</span>
           </h2>
           <p class="lead">
-            Want to learn claasical dance but dont know where to start? Here's a
-            best place to start your hobby, passion or carreir in classical.
-            Just a click and you will get all resources free!
+            Want to learn dance but don't know where to start? Here's a
+            best place to start your hobby, passion or career in classical and semi-classical dance.
+            Just a click and you will get all the resources! <br>
+            <div style="text-align: center; font-size: larger; font-style: italic; ">
+              <b>
+            <a href="{% url 'upcoming_classes' %}" style="color: black;">Upcoming Workshops and Classes</a> <br>
+            <a href="{% url 'home' %}" style="color: black;">Sign Up to avail resources</a>
+          </b>
+          </div>
           </p>
         </div>
         <div class="col-md-5">
           <img
+          style="width: 21em; float: right;"
             class="featurette-image img-fluid mx-auto img-fluid"
             src="{% static 'media/natraj.jfif' %}"
             alt="Natraj"
@@ -32,17 +74,18 @@
         <div class="col-md-7 order-md-2 my-auto">
           <h2 class="featurette-heading">
             Yes we teach from basic to professional.
-            <span class="text-muted">See for yourself.</span>
+            <a href="{% url 'home' %}"><span class="text-muted">See for yourself.</span></a>
           </h2>
           <p class="lead">
-            We aim at teaching people from basic to professional.Right from your
+            We aim at teaching people from basic to professional. Right from your
             Mudras(hand gestures) to specific expressions at specific time.
           </p>
         </div>
         <div class="col-md-5 order-md-1 pl-5">
           <img
+          style="width: 21em; float: left;"
             class="featurette-image img-fluid mx-auto img-fluid"
-            src="{% static 'media/semi-min.jpg' %}"
+            src="data:image/jpeg;base64,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"
             alt="Dance"
           />
         </div>
@@ -53,13 +96,13 @@
       <div class="row featurette">
         <div class="col-md-7 my-auto">
           <h2 class="featurette-heading">
-            Want to learn the rich Indian cultures and showcase your talent to
-            others
-            <span class="text-muted">Everything is possible here!</span>
+            Love dancing but don't know where to start?
+            <br>
+            <span class="text-muted">We are here to help!</span>
           </h2>
           <p class="lead">
-            Yes, we aim at spreading the our culture all around the world. Yup!
-            want to learn important part of Indian culture and impress others.
+            Yes, we aim at spreading love for dance all around the world. Yup!
+            want to learn the aesthetics of dance.
             THEN THIS IS THE RIGHT PLACE.
           </p>
         </div>
@@ -74,15 +117,5 @@
     </div>
     <br />
 
-    <footer
-      class="container peach-gradient p-3 ml-1 mr-1"
-      style="max-width: 100%;"
-    >
-      <p class="float-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-<p align="center"> Contact Us:-<br>Phone No.:- 9920354126<br>Instagram: - nrityam21<br>Facebook: - Nrityam21</div></p>
-
-      </p>
-    </footer>
 
 {% endblock content %}
